@@ -1,13 +1,14 @@
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
-        unordered_map<int,int> m;            //TC = O(nlogk) , SC=O(k)
-        vector<int> ans;
-        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> min_heap;
-        
+        vector<int> ans;                
+        unordered_map<int,int> m;       //TC = O(nlogk) , SC=O(k)
+                                        //using MIN HEAP and HashMap
         for(auto x: nums){
             m[x]++;
         }
+        
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> min_heap;
         
         for(auto x: m){
             min_heap.push({x.second,x.first});
