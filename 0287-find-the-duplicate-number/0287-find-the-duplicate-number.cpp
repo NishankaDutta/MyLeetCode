@@ -1,14 +1,20 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
+        int slow = nums[0];             
+        int fast = nums[0];         //Using Tortoise-Method(SLOW pointer and fast pointer method)
+                                    //TC = O(n) , SC = O(1)
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while(slow!=fast);
         
-        for(int i=0;i<nums.size();i++){
-            if(nums[i]==nums[i+1]){
-                return nums[i];
-            }
+        fast = nums[0];
+        while(slow!=fast){
+            slow = nums[slow];
+            fast = nums[fast];
         }
-        return 0;
+        return slow;
     }
 };
 
@@ -25,3 +31,15 @@ public:
 //             }
 //         }
 //         return 0;
+
+//2. USING SORTING: 
+
+//         sort(nums.begin(),nums.end());         //TC = O(nlogn) , SC=O(1)
+//         for(int i=0;i<nums.size();i++){
+//             if(nums[i]==nums[i+1]){
+//                 return nums[i];
+//             }
+//         }
+//         return 0;
+
+//3. WE CAN ALSO USE HASHMAP: TC=O(n) , SC=O(n)
