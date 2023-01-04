@@ -2,7 +2,7 @@ class Solution {
 public:
     void sortColors(vector<int>& nums) {
        
-        int low=0;
+        int low=0;                  //Using DUTCH NATIONAL FLAG ALGO:  TC=O(n) , SC=O(1)
         int mid=0;
         int high=nums.size()-1;
         
