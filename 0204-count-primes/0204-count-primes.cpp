@@ -2,7 +2,7 @@ class Solution {
 public:
     int countPrimes(int n) {
         
-        bool *isPrime = new bool[n];
+        bool *isPrime = new bool[n];     //Using sieve of Eratosthenes || TC=O(NloglogN)
         
         for(int i=2;i<n;i++){
             isPrime[i] = true;
