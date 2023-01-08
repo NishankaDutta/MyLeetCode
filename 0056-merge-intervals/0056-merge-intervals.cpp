@@ -6,7 +6,7 @@ public:
             return ans;
         }
         
-        sort(intervals.begin(),intervals.end());      //TC = O(nlogn)+O(n) , SC=O(n)
+        sort(intervals.begin(),intervals.end());      //TC = O(nlogn)+O(n) == O(nlogn) , SC=O(n)
         vector<int> tempInterval = intervals[0];
         
         for(auto x: intervals){
