@@ -23,3 +23,17 @@ public:
         return maxprod;
     }
 };
+
+
+//1. BRUTE-FORCE:              TC=O(n^2) , SC=O(1)
+
+//  int maxProduct(vector<int>& nums) {
+//     int ans = INT_MIN;
+//     for(int i = 0; i < nums.size(); i++) {
+//         int curProd = 1;
+//         for(int j = i; j < nums.size(); j++)
+//             curProd *= A[j],
+//             ans = max(ans, curProd);
+//     }
+//     return ans;
+//  }
