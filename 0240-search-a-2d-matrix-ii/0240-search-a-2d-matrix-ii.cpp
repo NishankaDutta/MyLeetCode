@@ -2,7 +2,7 @@ class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         int row = matrix.size();
-        int col = matrix[0].size();
+        int col = matrix[0].size();          // TC=O(row+col) or O(m+n) , SC=O(1)
         
         int rowIndex = 0;
         int colIndex = col-1;
