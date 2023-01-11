@@ -2,7 +2,7 @@ class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
         int n = matrix.size();
-        int m = matrix[0].size();           //TC=O(n*m) , SC=O(1)
+        int m = matrix[0].size();     // TC=O(m*n) , SC=O(1)
         int x = 1;
         int y = 1;
         
