@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        set<int> s;
+        unordered_set<int> s;
         int ans = 0;
         
         for(int i=0;i<nums.size();i++){            //TC = O(nk) == O(n) , SC = O(n)
