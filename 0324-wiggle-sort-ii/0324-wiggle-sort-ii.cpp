@@ -16,7 +16,11 @@ public:
     }
 };
 
-// int n = nums.size();
+
+
+//1. USING SORTING AND TWO POINTER(easiest method):->         REVISE IT!!!!!!!!!!!!!!
+
+//         int n = nums.size();
 //         sort(nums.begin(),nums.end());         // TC = O(nlogn) , SC=O(n)
 //         vector<int> temp(n);
         
