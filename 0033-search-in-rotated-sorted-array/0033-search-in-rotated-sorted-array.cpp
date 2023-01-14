@@ -1,8 +1,8 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        int n = nums.size();
-        int left = 0;
+        int n = nums.size();            //VERY IMP B.S PROBLEM
+        int left = 0;          
         int right = n-1;                  //TC = O(logn) , SC=O(1)
         
         while(left<=right){
