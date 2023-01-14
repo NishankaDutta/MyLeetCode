@@ -11,15 +11,19 @@ public:
             if(nums[mid]==target)
                 return mid;
             
-            else if(nums[left]<=nums[mid]){       //Find if it is Left sorted
-                if(nums[left]<=target && target<=nums[mid])
+            //if Left side is sorted
+            else if(nums[left]<=nums[mid]){        
+                //check if the target lies on the left side or not
+                if(nums[left]<=target && target<=nums[mid]) 
                     right=mid-1;
                 else
                     left=mid+1;
             }
             
+            //if Right side is sorted
             else{
-                if(nums[mid]<=target && target<=nums[right])      //Find if it is Right sorted
+                //check if the target lies on the right side or not
+                if(nums[mid]<=target && target<=nums[right]) 
                     left=mid+1;
                 else
                     right=mid-1;
