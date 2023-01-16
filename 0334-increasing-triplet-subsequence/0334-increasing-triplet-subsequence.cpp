@@ -1,6 +1,10 @@
 class Solution {
 public:
     bool increasingTriplet(vector<int>& nums) {
+        
+        if(nums.size()<3)
+            return false;
+        
         int first = INT_MAX;
         int second = INT_MAX;                       //TC = O(n) , SC=O(1)
         
