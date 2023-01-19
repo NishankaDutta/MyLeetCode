@@ -13,8 +13,8 @@ public:
                     continue;
                 
                 int low = j+1;
-                int high = n-1;
-                long long tSum = target-((long long)nums[i]+(long long)nums[j]);
+                int high = n-1;                    //Typecasting long long, as it is giving RUNTIME ERROR
+                long long tSum = target-((long long)nums[i]+(long long)nums[j]);   
                 while(low<high){
                     if(nums[low]+nums[high]==tSum){
                         vector<int> temp;
