@@ -4,11 +4,11 @@ public:
         int n=nums.size();
         vector<vector<int>> ans;
         sort(nums.begin(),nums.end());             //TC = O(n^3) , SC = O(n) .....it is the optimized way
-        for(int i=0;i<n;i++){
+        for(int i=0;i<n-3;i++){
             if(i>0 && nums[i]==nums[i-1])
                 continue;
             
-            for(int j=i+1;j<n;j++){
+            for(int j=i+1;j<n-2;j++){
                 if(j>i+1 && nums[j]==nums[j-1])
                     continue;
                 
