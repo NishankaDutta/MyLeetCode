@@ -40,10 +40,12 @@ public:
                 temp.push_back(s[i]);
         }
         
+        //convert all characters to lowercase
         for(int i=0;i<temp.length();i++){
             temp[i] = toLowerCase(temp[i]);
         }
         
+        //Return if the string is palindrome or not
         return checkPalindrome(temp);
     }
 };
