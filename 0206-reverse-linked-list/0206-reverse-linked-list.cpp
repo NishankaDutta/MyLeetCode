@@ -16,9 +16,10 @@ public:
         
         ListNode* curr = head;
         ListNode* prev = NULL;
+        ListNode* forward = NULL;
         
         while(curr != NULL){
-            ListNode* forward = curr->next;
+            forward = curr->next;
             curr->next = prev;
             prev = curr;
             curr = forward;
