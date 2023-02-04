@@ -10,36 +10,39 @@
  */
 class Solution {
 public:
-    void reverse(ListNode* &head, ListNode* prev, ListNode* curr){
-        if(curr != NULL){
-            reverse(head, curr, curr->next);
-            curr->next = prev;
-        }
-        else{
-            head = prev;
-        }
-    }
-    
-    ListNode* reverseList(ListNode* head) {         //TC = O(N) , SC = O(1)  ----> this is iterative solution
-        ListNode* prev = NULL;
+    ListNode* reverseList(ListNode* head) { 
+        if(head==NULL || head->next==NULL)
+            return head;
+        
         ListNode* curr = head;
-        reverse(head,prev, curr);
-        return head;
+        ListNode* prev = NULL;
+        ListNode* forward = NULL;
         
-        
-        //         if(head==NULL || head->next==NULL)
-//             return head;
-        
-//         ListNode* curr = head;
-//         ListNode* prev = NULL;
-//         ListNode* forward = NULL;
-        
-//         while(curr != NULL){
-//             forward = curr->next;
-//             curr->next = prev;
-//             prev = curr;
-//             curr = forward;
-//         }
-//         return prev;
+        while(curr != NULL){
+            forward = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = forward;
+        }
+        return prev;
     }
 };
+
+
+//2. Recursive solution:
+
+// void reverse(ListNode* &head, ListNode* prev, ListNode* curr){
+//         if(curr != NULL){
+//             reverse(head, curr, curr->next);
+//             curr->next = prev;
+//         }
+//         else{
+//             head = prev;
+//         }
+//     }
+    
+//     ListNode* reverseList(ListNode* head) {         //TC = O(N) , SC = O(1)
+//         ListNode* prev = NULL;
+//         ListNode* curr = head;
+//         reverse(head,prev, curr);
+//         return head;
