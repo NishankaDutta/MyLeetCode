@@ -16,7 +16,7 @@ public:
         ListNode* slow = start;
         ListNode* fast = start;              //TC = O(N) , SC= O(1)
         
-        for(int i=1;i<=n;i++)
+        for(int i=0;i<n;i++)
             fast = fast->next;
         
         while(fast->next != NULL){
