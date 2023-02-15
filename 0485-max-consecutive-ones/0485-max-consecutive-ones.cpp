@@ -6,10 +6,12 @@ public:
         for(int i=0;i<nums.size();i++){   //TC=O(N) , SC=O(1)
             if(nums[i]==1){
                 count++;
-                maxi = max(maxi,count);
             }
-            else
+            else{
                 count=0;
+            }
+            
+            maxi = max(maxi,count);
         }
         return maxi;
     }
