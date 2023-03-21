@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         int index1,index2;
         
-        for(int i=n-2;i>=0;i--){            
+        for(int i=n-2;i>=0;i--){            //TC = O(N)+O(N)+O(N) = O(N) , SC=O(1)
             if(nums[i]<nums[i+1]){
                 index1 = i;
                 break;
@@ -22,7 +22,7 @@ public:
                 }
             }
             swap(nums[index1],nums[index2]);
-            sort(nums.begin()+index1+1,nums.end());
+            reverse(nums.begin()+index1+1,nums.end());
         }
     }
 };
