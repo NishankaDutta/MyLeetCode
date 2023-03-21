@@ -22,7 +22,7 @@ public:
                 }
             }
             swap(nums[index1],nums[index2]);
-            reverse(nums.begin()+index1+1,nums.end());
+            sort(nums.begin()+index1+1,nums.end());
         }
     }
 };
