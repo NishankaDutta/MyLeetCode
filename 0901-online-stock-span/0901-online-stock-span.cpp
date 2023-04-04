@@ -9,11 +9,11 @@ public:
     
     int next(int price) {
         index++;
-        while(!s.empty() && s.top().second <= price){
+        while(!s.empty() && s.top().second <= price){    //find the previous greater element
             s.pop();
         }
         
-        if(s.empty()){
+        if(s.empty()){             //if there is no previous greater element
             s.push({index,price});
             return index+1;
         }
