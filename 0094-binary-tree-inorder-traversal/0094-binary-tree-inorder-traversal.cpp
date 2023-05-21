@@ -11,18 +11,46 @@
  */
 class Solution {
 public:
-    void helper(TreeNode* root, vector<int>& res){   //Using Revursion.   TC = O(n) , SC = O(1)
-        if(root == NULL)
-            return ;
-        
-        helper(root->left, res);
-        res.push_back(root->val);
-        helper(root->right, res);
-    }
-    
     vector<int> inorderTraversal(TreeNode* root) {
-        vector<int> res;
-        helper(root,res);
-        return res;
+        vector<int> inorder;
+        stack<TreeNode*> st;
+        TreeNode* node = root;            //TC = O(N) , SC = O(N)     :-> Using Iteration
+        
+        while(true){
+            if(node != NULL){
+                st.push(node);
+                node = node->left;
+            }
+            else{
+                if(st.empty() == true)
+                    break;
+                
+                node = st.top();
+                st.pop();
+                inorder.push_back(node->val);
+                node = node->right;
+            }
+        }
+        return inorder;
     }
 };
+
+
+
+
+// Method 1: Using Recursion:->
+
+// void helper(TreeNode* root, vector<int>& res){   //Using Revursion.   TC = O(n) , SC = O(1)
+//         if(root == NULL)
+//             return ;
+        
+//         helper(root->left, res);
+//         res.push_back(root->val);
+//         helper(root->right, res);
+//     }
+    
+//     vector<int> inorderTraversal(TreeNode* root) {
+//         vector<int> res;
+//         helper(root,res);
+//         return res;
+//     }
