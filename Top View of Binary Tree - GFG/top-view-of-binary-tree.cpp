@@ -105,6 +105,7 @@ class Solution
     vector<int> topView(Node *root)
     {
         vector<int> res;
+        if(root == NULL) return res;
         map<int,int> mp;
         queue<pair<Node*,int>> q;
         
