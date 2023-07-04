@@ -15,7 +15,7 @@ public:
         if(root==NULL)
             return 0;
         
-        int lh = height(root->left,diameter);
+        int lh = height(root->left,diameter);     //TC = O(N), SC = O(N)
         int rh = height(root->right,diameter);
         
         diameter = max(diameter,lh+rh);
