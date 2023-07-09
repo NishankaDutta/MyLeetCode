@@ -11,12 +11,12 @@
  */
 class Solution {
 public:
-    int preInd = 0;
-    TreeNode* buildTree_helper(vector<int>& preorder,vector<int>& inorder,int inStart,int inEnd) {
-        if(inStart > inEnd)
+    TreeNode* buildTree_helper(vector<int>& preorder,vector<int>& inorder,int preStart,int inStart,int inEnd) {
+        if(preStart > preorder.size()-1 || inStart > inEnd)      //TC = O(N), SC = O(N)
             return NULL;
         
-        TreeNode* node=new TreeNode(preorder[preInd++]);
+        int rootVal = preorder[preStart];
+        TreeNode* node = new TreeNode(rootVal);
         
         int rootIndex = -1;
         for(int i=inStart; i<=inEnd; i++){
@@ -26,8 +26,8 @@ public:
             }
         }
         
-        node->left = buildTree_helper(preorder,inorder,inStart,rootIndex-1);
-        node->right = buildTree_helper(preorder,inorder,rootIndex+1,inEnd);
+        node->left = buildTree_helper(preorder, inorder, preStart+1, inStart, rootIndex-1);
+        node->right = buildTree_helper(preorder, inorder, preStart+rootIndex-inStart+1, rootIndex+1, inEnd);
         
         return node;
     }
@@ -35,7 +35,8 @@ public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         int inStart = 0;
         int inEnd = inorder.size()-1;
+        int preStart = 0;
         
-        return buildTree_helper(preorder,inorder,inStart,inEnd);
+        return buildTree_helper(preorder,inorder,preStart,inStart,inEnd);
     }
 };
