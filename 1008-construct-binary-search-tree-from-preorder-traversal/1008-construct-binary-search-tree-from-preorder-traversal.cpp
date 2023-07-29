@@ -15,7 +15,7 @@ public:
         if(preorder.size() == NULL)
             return NULL;
         
-        int root_value = preorder[0];      //TC = O(N^2)
+        int root_value = preorder[0];      //TC = O(N^2) --> Brute Force method
         
         TreeNode* node = new TreeNode(root_value);
         
@@ -32,3 +32,6 @@ public:
         return node;
     }
 };
+
+
+//Method 2: if we sort the preorder then we will get the inorder.....if we get both the inorder and preorder tarversal then we can create a bst from them with a time complexity of O(nlogn)
