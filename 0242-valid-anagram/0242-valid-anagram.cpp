@@ -6,20 +6,35 @@ public:
             return false;
         }
         
-        int hash[26] = {0};
+//         int hash[26] = {0};
         
-        for(int i=0;i<s.length();i++){          //TC = O(N)
-            hash[s[i]-'a']++;
-            hash[t[i]-'a']--;
+//         for(int i=0;i<s.length();i++){          //TC = O(N)
+//             hash[s[i]-'a']++;
+//             hash[t[i]-'a']--;
+//         }
+        
+//         for(int i=0;i<26;i++){
+//             if(hash[i]!=0)
+//                 return false;
+//         }
+//         return true;
+        unordered_map<char,int> mp1;
+        unordered_map<char,int> mp2;
+        
+        for(auto x: s){
+            mp1[x]++;
         }
         
-        for(int i=0;i<26;i++){
-            if(hash[i]!=0)
+        for(auto x: t){
+            mp2[x]++;
+        }
+        
+        for(int i=0;i<s.length();i++){
+            if(mp1[t[i]] != mp2[t[i]])
                 return false;
         }
+        
         return true;
-        
-        
         
         
         
